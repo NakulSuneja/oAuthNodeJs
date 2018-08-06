@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo App</title>
+  </head>
+  <body>
+    <p>Hi <%= user.Username %>!</p>
+    <p><b><%= client.name %> is requesting access to your application</b></p>
+    <p>Do you approve</p>
+
+    <form action="/oauth2/authorize" method="post">
+      <input name="transaction_id" type="hidden" value="<%= transactionID %>">
+      <div>
+        <input type="submit" value="Allow">
+        <input type="submit" value="Deny" name="cancel">
+      </div>
+    </form>
+
+  </body>
+</html>    
